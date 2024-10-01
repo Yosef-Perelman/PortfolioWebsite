@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import MenuOverLay from './MenuOverLay';
+import { HOME_EMOJI } from '../../../public/assets/emojis';
 
 const navLinks = [
     {
@@ -27,8 +28,8 @@ const Navbar = () => {
     return (
         <nav className='fixed top-0 left-0 right-0 z-10 bg-black bg-opacity-100'>
             <div className='flex flex-wrap items-center justify-between mx-auto px-4 py-2'>
-                <Link href={'/'} className="text-xl md:text-4xl text-black font-semibold">
-                    LOGO
+                <Link href={'/'} className="text-xl md:text-4xl text-white font-semibold">
+                {HOME_EMOJI}
                 </Link>
                 <div className="mobile-menu block md:hidden">
                     {!navbarOpen ? (
