@@ -1,10 +1,12 @@
 "use client"
+
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import MenuOverLay from './MenuOverLay';
 import { HOME_EMOJI } from '../../../public/assets/emojis';
+import smoothscroll from 'smoothscroll-polyfill';
 
 const navLinks = [
     {
@@ -19,6 +21,30 @@ const navLinks = [
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
+
+    useEffect(() => {
+        smoothscroll.polyfill();
+    }, []);
+
+    const handleScroll = (e) => {
+        // First prevent the default anchor behavior
+        e.preventDefault();
+
+        // Get the href and remove everything before the hash (#)
+        const href = e.currentTarget.href;
+        const targetId = href.replace(/.*\#/, "");
+
+        // Get the element by id and use scrollIntoView
+        const elem = document.getElementById(targetId);
+        
+        if (elem) {
+            setNavbarOpen(false);
+            window.scrollTo({
+                top: elem.offsetTop - 60, // Adjust this value as needed
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
         <nav className='fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100'>
@@ -50,13 +76,13 @@ const Navbar = () => {
                     <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
                         {navLinks.map((link, index) => (
                             <li key={index}>
-                                <NavLink href={link.path} title={link.title} />
+                                <NavLink href={link.path} title={link.title} onClick={handleScroll} />
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
-            {navbarOpen ? <MenuOverLay links={navLinks} /> : null}
+            {navbarOpen ? <MenuOverLay links={navLinks} handleScroll={handleScroll} /> : null}
         </nav>
     )
 }

@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useTransition, useState} from 'react'
+import React, { useTransition, useState, useRef } from 'react'
 import Image from 'next/image'
 import TabButton from './TabButton'
+import { motion, useInView } from 'framer-motion';
 
 const TAB_DATA = [
   {
@@ -43,27 +44,34 @@ const TAB_DATA = [
 
 const AboutSection = () => {
 
-    const [tab, setTab] = useState("skills");
-    const [isPending, startTransition] = useTransition();
+  const [tab, setTab] = useState("skills");
+  const [isPending, startTransition] = useTransition();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
-    const handleTabChange = (id) => {
-        startTransition(() => {
-            setTab(id);
-        });
-    };
+  const handleTabChange = (id) => {
+    startTransition(() => {
+      setTab(id);
+    });
+  };
 
 
   return (
-    <section id="about">
-    <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
+    <section id="about" ref={ref}>
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'
+      >
         <Image src='/assets/images/hacker.jpeg' width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-            <h2 className='text-4xl font-bold mb-4'>About Me</h2>
-            <p className='text-base lg:text-lg'>
+          <h2 className='text-4xl font-bold mb-4'>About Me</h2>
+          <p className='text-base lg:text-lg'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div className="flex flex-row justify-start mt-8">
+          </p>
+          <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -90,7 +98,7 @@ const AboutSection = () => {
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
-        </div>
+      </motion.div>
     </section>
   )
 }

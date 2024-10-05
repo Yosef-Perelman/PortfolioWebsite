@@ -9,8 +9,8 @@ const OpenSection = () => {
         <section className='lg:py-16'>
             <div className='grid grid-cols-1 sm:grid-cols-12'>
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                     className='col-span-7 place-self-center text-center sm:text-left'>
                     <h1 className="mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">

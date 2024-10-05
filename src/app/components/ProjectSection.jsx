@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "../../../public/assets/info";
