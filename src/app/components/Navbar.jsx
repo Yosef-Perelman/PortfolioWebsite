@@ -40,7 +40,7 @@ const Navbar = () => {
         if (elem) {
             setNavbarOpen(false);
             window.scrollTo({
-                top: elem.offsetTop - 60, // Adjust this value as needed
+                top: elem.offsetTop - 100, // Adjust this value as needed
                 behavior: 'smooth'
             });
         }
