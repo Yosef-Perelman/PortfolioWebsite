@@ -7,36 +7,42 @@ import { motion, useInView } from 'framer-motion';
 
 const TAB_DATA = [
   {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ul>
-    ),
-  },
-  {
     title: "Education",
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li><span className='font-bold'>Bar-Ilan University</span> - B.Sc, Computer Science</li>
+        <li>Udemi, YouTube, Lectures, Books, meetup's and anywhere I can learn and improve</li>
       </ul>
     ),
   },
   {
-    title: "Certifications",
-    id: "certifications",
+    title: "Skills",
+    id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>Sql</li>
+        <li>Node</li>
+        <li>React</li>
+        <li>Flask</li>
+        <li>Spring</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Frameworks",
+    id: "frameworks",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>MySql</li>
+        <li>MongoDB</li>
+        <li>Git</li>
+        <li>Docker</li>
+        <li>AWS</li>
+        <li>GCP</li>
       </ul>
     ),
   },
@@ -44,7 +50,7 @@ const TAB_DATA = [
 
 const AboutSection = () => {
 
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("education");
   const [isPending, startTransition] = useTransition();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -73,13 +79,6 @@ const AboutSection = () => {
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton>
-            <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
@@ -87,11 +86,18 @@ const AboutSection = () => {
               Education{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
+              selectTab={() => handleTabChange("skills")}
+              active={tab === "skills"}
             >
               {" "}
-              Certifications{" "}
+              Skills{" "}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("frameworks")}
+              active={tab === "frameworks"}
+            >
+              {" "}
+              Frameworks{" "}
             </TabButton>
           </div>
           <div className="mt-8">
