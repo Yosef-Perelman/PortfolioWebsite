@@ -3,15 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000; /* Black background */
+  --foreground: #FFFFFF; /* White text */
+  --primary: #FF6B00; /* Orange for primary elements */
 }
 
 body {
@@ -25,3 +19,14 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  body {
+    @apply bg-secondary text-accent;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary;
+  }
+}
+
+/* You can add any additional global styles here */

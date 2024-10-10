@@ -49,7 +49,6 @@ const TAB_DATA = [
 ];
 
 const AboutSection = () => {
-
   const [tab, setTab] = useState("education");
   const [isPending, startTransition] = useTransition();
   const ref = useRef(null);
@@ -61,19 +60,24 @@ const AboutSection = () => {
     });
   };
 
-
   return (
-    <section id="about" ref={ref}>
+    <section id="about" ref={ref} className="bg-secondary text-accent">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
         transition={{ duration: 1 }}
-        className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'
+        className='md:grid md:grid-cols-2 gap-8 py-8 px-4 items-start xl:gap-16 sm:py-16 xl:px-16'
       >
-        <Image src='/assets/images/aboutpic.jpeg' width={500} height={500} />
+        <Image 
+        src='/assets/images/aboutpic.jpeg' 
+        width={500} 
+        height={500} 
+        className="rounded-lg"
+        // style={{ objectFit: 'cover', aspectRatio: 1 }} 
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className='text-4xl font-bold mb-4'>About Me</h2>
-          <p className='text-base lg:text-lg'>
+          <h2 className='text-4xl font-bold mb-4 text-primary'>About Me</h2>
+          <p className='text-base lg:text-lg text-gray-300'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -82,25 +86,22 @@ const AboutSection = () => {
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("frameworks")}
               active={tab === "frameworks"}
             >
-              {" "}
-              Frameworks{" "}
+              Frameworks
             </TabButton>
           </div>
-          <div className="mt-8">
+          <div className=" p-1 rounded-md">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>

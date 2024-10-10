@@ -10,8 +10,12 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'primary': '#f87171', // red 400
+        'secondary': '#000000', // black
+        'accent': '#FFFFFF', // white
       },
     },
   },
   plugins: [],
 };
+
