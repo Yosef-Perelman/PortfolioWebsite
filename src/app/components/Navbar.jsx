@@ -57,7 +57,9 @@ const Navbar = () => {
                     href={'/'}
                     className="text-accent text-2xl md:text-5xl font-semibold"
                 >
+                    <span className="text-accent">
                     Y.P.
+                    </span>
                 </Link>
                 <div className="mobile-menu block md:hidden">
                     {!navbarOpen ? (

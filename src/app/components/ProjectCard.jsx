@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
-    <div>
+    <div className=" rounded-t-xl overflow-hidden">
       <div
-        className="h-52 md:h-72 rounded-t-xl relative group"
+        className="h-52 md:h-72  relative group"
         style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
       >
         <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
@@ -24,9 +24,9 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           </Link>
         </div>
       </div>
-      <div className=" rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
-        <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p>{description}</p>
+      <div className="border-2 border-secondary border-t-0 rounded-b-xl pt-3 bg-[#181818]py-6 px-4">
+        <h5 className="text-xl font-bold text-accent mb-2">{title}</h5>
+        <p className="text-gray-600 mb-4">{description}</p>
       </div>
     </div>
   );

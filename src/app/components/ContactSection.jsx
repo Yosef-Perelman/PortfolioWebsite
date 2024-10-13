@@ -1,8 +1,19 @@
-import React from 'react'
+"use client"
+
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion';
 
 const ContactSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="py-8 px-4 sm:py-16 flex justify-center items-center">
+    <section id="contact" ref={ref} >
+    <motion.div
+    initial={{ y: 50, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+        transition={{ duration: 1 }} 
+    className="py-8 px-4 sm:py-16 flex justify-center items-center">
       <div className="flex flex-row items-center justify-center max-w-md w-full">
         <a 
           href="https://github.com/Yosef-Perelman" 
@@ -36,7 +47,8 @@ const ContactSection = () => {
           </svg>
         </a>
       </div>
-    </div>
+    </motion.div>
+    </section>
   )
 }
 

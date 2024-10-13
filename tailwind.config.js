@@ -10,12 +10,11 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'primary': '#f87171', // red 400
-        'secondary': '#000000', // black
-        'accent': '#FFFFFF', // white
+        'primary': '#FFFFFF', // white
+        'secondary': '#2C3E50', // dark blue
+        'accent': '#1ABC9C', // light blue
       },
     },
   },
   plugins: [],
 };
-

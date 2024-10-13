@@ -61,7 +61,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" ref={ref} className="bg-secondary text-accent">
+    <section id="about" ref={ref} className="bg-secondary mt-40 rounded-xl">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
@@ -76,12 +76,14 @@ const AboutSection = () => {
         // style={{ objectFit: 'cover', aspectRatio: 1 }} 
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className='text-4xl font-bold mb-4 text-primary'>About Me</h2>
-          <p className='text-base lg:text-lg text-gray-300'>
+          <h2 className='text-4xl lg:text-6xl font-bold mb-4 text-primary'>
+            About Me
+            </h2>
+          <p className='text-base lg:text-lg text-primary'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-row flex-wrap justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
@@ -101,7 +103,7 @@ const AboutSection = () => {
               Frameworks
             </TabButton>
           </div>
-          <div className=" p-1 rounded-md">
+          <div className="p-1 mt-1 rounded-md text-primary">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
