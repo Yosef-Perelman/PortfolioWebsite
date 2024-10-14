@@ -22,7 +22,7 @@ const ProjectsSection = () => {
       </h2>
       <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
         {projectsData.map((project, index) => (
-            <motion.li
+          <motion.li
             key={index}
             variants={cardVariants}
             initial="initial"
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
             />
-            </motion.li>
+          </motion.li>
         ))}
       </ul>
     </section>
