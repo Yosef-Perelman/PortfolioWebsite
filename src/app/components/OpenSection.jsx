@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 import { motion, px } from 'framer-motion';
 
 const OpenSection = () => {
@@ -31,14 +32,18 @@ const OpenSection = () => {
                     </div>
                 </div>
                 <div className='col-span-5 place-self-center mt-4 lg:mt-0'>
-                    <div className="w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative rounded-full bg-accent">
-                        <Image
-                            src="/assets/images/profile_image.jpg"
-                            alt="face image"
-                            className="rounded-full object-contain w-full h-full"
-                            width={400}
-                            height={400}
-                            quality={100}
+                    <div className="w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative rounded-full bg-accent flex items-center justify-center">
+                        <TypeAnimation
+                            sequence={[
+                                'Coding...',
+                                2000,
+                                '',
+                                500,
+                            ]}
+                            cursor={true}
+                            repeat={Infinity}
+                            speed={50}
+                            className="text-4xl lg:text-6xl sm:text-1xl font-semibold text-secondary" // Optional: add size and styling to the text
                         />
                     </div>
                 </div>
@@ -48,3 +53,12 @@ const OpenSection = () => {
 }
 
 export default OpenSection
+
+{/* <Image
+                            src="/assets/images/profile_image.jpg"
+                            alt="face image"
+                            className="rounded-full object-contain w-full h-full"
+                            width={400}
+                            height={400}
+                            quality={100}
+                        /> */}
