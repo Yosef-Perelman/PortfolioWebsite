@@ -19,7 +19,7 @@ const ContactSection = () => {
             href="https://github.com/Yosef-Perelman"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity mx-4 sm:mx-6"
+            className="hover:opacity-60 transition-opacity mx-4 sm:mx-6"
             aria-label="GitHub"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="currentColor">
@@ -30,7 +30,7 @@ const ContactSection = () => {
             href="https://www.linkedin.com/in/yosef-perelman/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity mx-4 sm:mx-6"
+            className="hover:opacity-60 transition-opacity mx-4 sm:mx-6"
             aria-label="LinkedIn"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="currentColor">
@@ -38,8 +38,8 @@ const ContactSection = () => {
             </svg>
           </a>
           <a
-            href="mailto:example@gmail.com"
-            className="hover:opacity-80 transition-opacity mx-4 sm:mx-6"
+            href="mailto:yosefper@gmail.com"
+            className="hover:opacity-60 transition-opacity mx-4 sm:mx-6"
             aria-label="Email"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="currentColor">

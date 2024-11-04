@@ -23,27 +23,33 @@ const OpenSection = () => {
                         Software Developer
                     </h3>
                     <p className='text-base sm:text-lg mb-6 lg:text-xl text-gray-600'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+                    Fullstack Developer. Passionate about Servers, Cloud Computing, SAAS Application Development and more.               </p>
                     <div>
-                        <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 font-bold bg-accent text-primary hover:bg-secondary transition-colors duration-300'>
-                            Download CV
-                        </button>
-                    </div>
+    <a 
+        href='/assets/Yosef Perelman - Software Developer.pdf '
+        target="_blank" 
+        rel="noopener noreferrer"
+        className='inline-block px-6 py-3 w-full sm:w-fit rounded-full mr-4 font-bold bg-accent text-primary hover:bg-secondary transition-colors duration-300'
+    >
+        Download CV
+    </a>
+</div>
                 </div>
                 <div className='col-span-5 place-self-center mt-4 lg:mt-0'>
                     <div className="w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative rounded-full bg-accent flex items-center justify-center">
                         <TypeAnimation
                             sequence={[
                                 'Coding...',
-                                2000,
-                                '',
-                                500,
+                                1000,
+                                'Eating...',
+                                1000,
+                                'Sleeping...',
+                                1000,
                             ]}
                             cursor={true}
                             repeat={Infinity}
                             speed={50}
-                            className="text-4xl lg:text-6xl sm:text-1xl font-semibold text-secondary" // Optional: add size and styling to the text
+                            className="text-4xl lg:text-6xl sm:text-2xl font-semibold text-secondary" // Optional: add size and styling to the text
                         />
                     </div>
                 </div>
